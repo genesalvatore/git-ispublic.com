@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import CathedralStructuredData from '@/components/CathedralStructuredData'
+import MatomoAnalytics from '@/components/MatomoAnalytics'
 
 export const metadata: Metadata = {
   title: 'Git is Public | Radical Transparency & Open Source Truth',
@@ -43,7 +44,10 @@ export default function RootLayout({
         <script defer data-domain="git-ispublic.com" src="https://plausible.io/js/script.js"></script>
         <CathedralStructuredData siteName="Git is Public" siteUrl="https://git-ispublic.com" description="Git is Public. Transparency through code. Open source liberation. Collaborative truth for all humanity." theme="transparency" />
       </head>
-      <body>{children}</body>
+      <body>
+        <MatomoAnalytics siteId="11" />
+        {children}
+      </body>
     </html>
   )
 }
